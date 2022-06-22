@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useLayoutEffect } from 'react'
 import { Container, Row, Col, Form, Button, InputGroup, Alert } from 'react-bootstrap';
 import './Login.css';
 import logo from '../../logo.png'
@@ -44,7 +44,7 @@ const getItemLocalStorage=()=>{
   let userDetails=localStorage.getItem("userDetails");
   userDetails&&setUserIsLogIn(true);
 }
-useEffect(()=>{
+useLayoutEffect(()=>{
   getItemLocalStorage();
 },[])
   return (<>       

@@ -3,12 +3,12 @@ import { Button } from 'react-bootstrap';
 import { AiOutlineGlobal } from "react-icons/ai";
 
 export default function Header(props) {
-  const { backgroundColor = '#cad4ff', setUserIsLogIn, userIsLogIn,setDirection,direction } = props
+  const {  setUserIsLogIn, userIsLogIn,setDirection,direction } = props
   const styels = {
     Container: {
       width: '100%',
       height: '45px',
-      'backgroundColor': backgroundColor,
+      'backgroundColor':'rgb(142 163 253)',
     },
     logOut:(dir)=> {
       return{ 
@@ -36,16 +36,17 @@ export default function Header(props) {
     localStorage.removeItem("userDetails")
     setUserIsLogIn(false)
   }
+  
   return (
     <div style={styels.Container}>
-      {userIsLogIn && <><Button className='logOut' style={styels.logOut(direction=='left'?'right':'left')} onClick={() => {handelLogOut();  }}>
+      {userIsLogIn && <><Button className='logOut' style={styels.logOut(direction==='left'?'right':'left')} onClick={() => {handelLogOut();  }}>
         log out
       </Button>
             <span
-            onClick={()=>{setDirection(direction=='left'?'right':'left')}}
+            onClick={()=>{setDirection(direction==='left'?'right':'left')}}
             className='logOut'>
             <AiOutlineGlobal
-            style={styels.globalIcon(direction=='left'?'right':'left')}
+            style={styels.globalIcon(direction==='left'?'right':'left')}
             />
             </span>
             </>

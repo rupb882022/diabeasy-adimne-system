@@ -3,7 +3,7 @@ import * as AiIcons from 'react-icons/ai'
 import { GiRiceCooker } from 'react-icons/gi'
 import { Route, Routes } from 'react-router-dom';
 import Home from '../Pages/Home.jsx';
-import SecoundPage from '../Pages/SecoundPage.jsx';
+import SecoundPage from '../Pages/SecoundPage/SecoundPage.jsx';
 
 export const SidebarLayout = [
     {

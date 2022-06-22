@@ -21,7 +21,6 @@ export default function MainMenu() {
       direction={direction}
     />}
     <Header
-      backgroundColor={navbarBackgroundColor}
       setUserIsLogIn={(val) => { setUserIsLogIn(val) }}
       userIsLogIn={userIsLogIn}
       setDirection={(val)=>{setDirection(val)}}

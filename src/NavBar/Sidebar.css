@@ -23,6 +23,7 @@
   position: fixed;
   transition: 850ms;
   width: 200px;
+  z-index: 1;
 }
 .nav-menu.left-side.active {
   left: 0;
@@ -114,6 +115,7 @@
 }
 .right-side .logo {
   left: 8%;
+  /* transform: scaleX(-1); */
 }
 .logo {
   width: 85%;
