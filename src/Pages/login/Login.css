@@ -1,0 +1,35 @@
+.formContainer,.alert{
+  width: 50%;
+  margin: 0px auto;
+}
+.formContainer{
+  padding-top: 10%;
+}
+.alert{
+  margin-top: 2%;
+  color: black;
+}
+.LogInButton{
+  align-items: center;
+  width: 100%;
+  margin-top:4%;
+}
+.alertBody{
+  margin: 0 auto;
+  text-align: center;
+}
+.eyeIcon:hover{
+color:white;
+background-color: #0d6efd82;
+}
+.Loginimg{
+position: fixed;
+margin: 0 auto;
+position: fixed;
+left: 3%;
+top: -20%;
+opacity: 0.5;
+margin: 0 auto;
+z-index: -1;
+width: 100%;
+}

@@ -1,0 +1,165 @@
+
+.menu-bars-active {
+  text-align: center;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  background: none;
+  z-index: 1;
+}
+.menu-bars {
+  display: block;
+}
+.right-side{
+  right: -150px;
+}
+.left-side{
+  left: -150px;
+}
+.nav-menu {
+  background-color: #cad4ff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  transition: 850ms;
+  width: 200px;
+}
+.nav-menu.left-side.active {
+  left: 0;
+}
+.nav-menu.right-side.active {
+  right: 0;
+}
+.nav-menu.active {
+  transition: 350ms;
+  z-index: 1;
+}
+.navbarContainer ol, ul {
+  padding:0;
+}
+.left-side .nav-text{
+  text-align: left;
+  right: 7%;
+}
+.right-side .nav-text{
+  text-align: right;
+  left: 7%;
+}
+.nav-text {
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  height: 7%;
+  padding-top: 5px;
+  position: relative;
+}
+
+.nav-menu.active .nav-menu-items .nav-text span {
+  color: rgb(2 62 141);
+  font-weight: 500;
+}
+.nav-menu.left-side .nav-menu-items .nav-text svg {
+  left: 80%;
+}
+.nav-menu.right-side .nav-menu-items .nav-text svg {
+  right: 80%;
+}
+.nav-menu .nav-menu-items .nav-text svg {
+  position: relative;
+  transition: 850ms;
+  z-index: 2;
+}
+
+.nav-menu.left-side.active .nav-menu-items .nav-text svg {
+  left: 0;
+  transition: 850ms;
+  position: static;
+  margin-left: 8%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+}
+.nav-menu.right-side.active .nav-menu-items .nav-text svg {
+  right: 0;
+  transition: 850ms;
+  position: static;
+  margin-right: 8%;
+    margin-left: 3%;
+    margin-bottom: 2%;
+}
+
+.nav-menu.active .nav-text:hover {
+  background-color: #ffffffac;
+  color: white;
+  width: 110%;
+}
+.nav-text a {
+  text-decoration: none;
+  color: rgb(222, 222, 222);
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  padding: 0 16px;
+  align-items: center;
+  border-radius: 4px;
+}
+.nav-menu.active .nav-text a:hover {
+  color: white;
+}
+.nav-menu-item {
+  width: 100%;
+  padding: 0;
+}
+.left-side .logo {
+  right: 8%;
+}
+.right-side .logo {
+  left: 8%;
+}
+.logo {
+  width: 85%;
+  position: relative;
+  padding: 11px 0 0;
+}
+.left-side .arrowIcon{
+  right: 10%;
+}
+.right-side .arrowIcon{
+  left: 7%;
+}
+.arrowIcon{
+  margin: 0 auto;
+  position: relative;
+}
+.left-side .icons {
+  margin-left: 6px;
+}
+.left-right .icons {
+  margin-right: 6px;
+}
+.left-side .navbarToggle{
+  left: 4%;
+  text-align:left;
+}
+.right-side .navbarToggle{
+  right: 4%;
+  text-align:right;
+}
+.navbarToggle{
+  width: 100%;
+  height:80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.logOut:hover{
+  background-color: rgba(214, 214, 253, 0.603);
+  }
+
+
+
+
+
+
+
+
