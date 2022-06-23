@@ -7,6 +7,7 @@ export default function Tables(props) {
    , data //json with data                               *Required*
    ,columns //json with columns configuration            *Required*
    ,isSelectedRows=false //for checkbox select rows
+   ,language='Hebrew'
   }=props
 
 
@@ -24,6 +25,7 @@ export default function Tables(props) {
         data={data}
         columns={columns}
         isSelectedRows={isSelectedRows}
+        language={language}
         />;
       default:
         break;

@@ -1,0 +1,21 @@
+.css-y6rp3m-MuiButton-startIcon>*:nth-of-type(1){
+  font-size: 18px;
+  margin: 0 5px 2px 6px;
+}
+.css-78c6dr-MuiToolbar-root-MuiTablePagination-toolbar .MuiTablePagination-actions{
+  direction: ltr;
+  margin-left: 0px;
+}
+.css-levciy-MuiTablePagination-displayedRows{
+  direction: ltr;
+  margin-top: 4.5%;
+}
+.css-78c6dr-MuiToolbar-root-MuiTablePagination-toolbar{
+  direction: ltr;
+}
+.css-n3z9fz-MuiPopper-root-MuiDataGrid-panel{
+  direction: rtl;
+}
+.css-rtrcn9-MuiTablePagination-root .MuiTablePagination-selectLabel{
+  margin-top: 3.5%;
+}

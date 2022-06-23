@@ -25,7 +25,7 @@ export default function Header(props) {
       return{
       color: 'white',
       float: dir,
-      margin: '11px 0 2px',
+      margin: '11px 10px 2px',
       fontSize: '22px',
       cursor: 'pointer'
     }
