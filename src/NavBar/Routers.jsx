@@ -1,69 +1,90 @@
-import React,{useLayoutEffect,useState} from "react";
+import React, { useLayoutEffect, useState } from "react";
 import * as AiIcons from 'react-icons/ai'
-import { GiRiceCooker } from 'react-icons/gi'
+import { MdForum, MdFastfood } from 'react-icons/md'
 import { Route, Routes } from 'react-router-dom';
 import Home from '../Pages/Home.jsx';
-import SecoundPage from '../Pages/SecoundPage/SecoundPage.jsx';
-
+import Food from '../Pages/Food/Food.jsx';
+import Forum from '../Pages/Forum/Forum.jsx';
+import logo from '../../src/logo.png'
 export const SidebarLayout = [
-    {
-        title: 'Home',
-        path: '/',
-        icon: <AiIcons.AiFillHome />,
-        ClassName: 'nav-text'
-    },
-    {
-        title: 'secound page',
-        path: '/SecoundPage',
-        icon: <GiRiceCooker />,
-        ClassName: 'nav-text'
-    },
+  {
+    title: 'Home',
+    path: '/',
+    icon: <AiIcons.AiFillHome />,
+    ClassName: 'nav-text'
+  },
+  {
+    title: 'Food',
+    path: '/Food',
+    icon: <MdFastfood />,
+    ClassName: 'nav-text'
+  },
+  {
+    title: 'Forum',
+    path: '/Forum',
+    icon: <MdForum />,
+    ClassName: 'nav-text'
+  },
 ]
 
 export default function Page(props) {
 
-    const [screenSize, setScreenSize] = useState(window.innerWidth);
-    const {navMenuExpended,direction}=props
-    const windowWidth = screenSize;
-    let pageWidth = parseFloat(windowWidth) - (navMenuExpended ? 50 : 200);
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const { navMenuExpended, direction } = props
+  const windowWidth = screenSize;
+  let pageWidth = parseFloat(windowWidth) - (navMenuExpended ? 50 : 200);
 
-   
-    // Responsible on responsiveness when screen size changes
-    useLayoutEffect(() => {
-      function updateSize() {
-        setScreenSize(window.innerWidth);
+
+  // Responsible on responsiveness when screen size changes
+  useLayoutEffect(() => {
+    function updateSize() {
+      setScreenSize(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    //will clean eventListener before updateSize
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+
+
+
+  const styles = {
+    page: (dir) => {
+      return {
+        'textAlign': 'center',
+        'alignItems': 'center',
+        'alignSelf': 'center',
+        'transition': '850ms',
+        'zIndex': -1,
+        'animationDirection': 'alternate',
+        'float': dir,
+        width: pageWidth,
+        padding: '0px 10px',
+        backgroundImage: `url(${logo})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        height: window.innerHeight
       }
-      window.addEventListener('resize', updateSize);
-      updateSize();
-      //will clean eventListener before updateSize
-      return () => window.removeEventListener('resize', updateSize);
-    }, []);
 
-  
-
-
-    const styles = {
-        page:(dir)=> {
-          return{
-            'textAlign': 'center',
-          'alignItems': 'center',
-          'alignSelf': 'center',
-          'transition': '850ms',
-          'zIndex': -1,
-          'animationDirection': 'alternate',
-          'float': dir,
-          width:pageWidth,
-          padding:'0px 10px'
-        }
-        }
-      }
+    },
+    content: {
+      height: '100%',
+      width: '100%',
+      backgroundColor:'rgb(255 255 255 / 78%)'
+    }
+  }
 
 
-      
-    return (<div style={styles.page(direction==='left'?'right':'left')} >
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/SecoundPage" element={<SecoundPage />} />
-        </Routes>
-    </div>)
+
+  return (<div style={styles.page(direction === 'left' ? 'right' : 'left')} >
+    <div style={styles.content}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Food" element={<Food />} />
+        <Route path="/Forum" element={<Forum />} />
+      </Routes>
+    </div>
+  </div>)
 }

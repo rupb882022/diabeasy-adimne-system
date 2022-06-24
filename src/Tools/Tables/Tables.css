@@ -19,3 +19,6 @@
 .css-rtrcn9-MuiTablePagination-root .MuiTablePagination-selectLabel{
   margin-top: 3.5%;
 }
+.MuiDataGrid-virtualScroller .css-1w5m2wr-MuiDataGrid-virtualScroller{
+  overflow-x: auto;
+}
