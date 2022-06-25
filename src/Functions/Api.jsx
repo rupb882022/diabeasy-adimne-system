@@ -28,3 +28,6 @@ export const  addCategory=(categoryName,categoryId,body)=>{
 export const  deleteCategory=(categoryId,body)=>{
   return Axios(`Food/deleteCategory/${categoryId}`,'Delete',body);
 }
+export const  checkAdmin=(userName,password)=>{
+  return Axios(`User/checkAdmin/${userName}/${password}`,'Get');
+}

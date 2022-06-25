@@ -101,9 +101,9 @@ export default function Home() {
           style={{marginTop:'3%', width: '18rem', height: '18rem' ,border:'2px solid #5c5cff',backgroundColor:'rgb(229 255 255 / 86%)', boxShadow:'0 0 10px #9ecaed'}}
           className="mb-2"
         >
-          <Card.Header style={{fontSize:40,fontWeight:'bold'}}>Food</Card.Header>
+          <Card.Header style={{fontSize:30,fontWeight:'bold',flexWrap:'warp'}}>Food added by users</Card.Header>
           <Card.Body>
-            <Card.Text style={{fontSize:30,fontWeight:600}}>
+            <Card.Text style={{fontSize:25,fontWeight:600}}>
             Total: {kpi.Recipes+kpi.Ingredients}
             </Card.Text>
             <Card.Text style={{fontSize:20,fontWeight:400}}>

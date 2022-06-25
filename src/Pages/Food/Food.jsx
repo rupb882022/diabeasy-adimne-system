@@ -173,10 +173,10 @@ console.log("data",data)
     <Row>
       <Col style={{ textAlign: 'left' }} md={1}><Button variant={isRecipe ? "secondary" : "primary"} onClick={() => { setIsRecipe(false) }}>Ingredients</Button></Col>
       <Col style={{ textAlign: 'left' }} md={2}><Button variant={isRecipe ? "primary" : "secondary"} onClick={() => { setIsRecipe(true) }}>Recipes</Button></Col>
-      <Col style={{ textAlign: 'end' }} md={2}><Button variant={buttonState == "AddCategory" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("AddCategory") }}>Add category</Button></Col>
-      <Col style={{ textAlign: 'initial' }} md={3}><Button variant={buttonState == "AddUnit" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("AddUnit") }}>Add unit of measure</Button></Col>
-      <Col style={{ textAlign: 'end' }} md={2}><Button variant={buttonState == "deleteCategory" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("deleteCategory") }}>Delete category</Button></Col>
-      <Col style={{ textAlign: 'initial' }} md={2}><Button variant={buttonState == "deleteUnit" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("deleteUnit") }}>Delete unit of measure</Button></Col>
+      <Col style={{ textAlign: 'left' }} md={5}><Button variant={buttonState == "AddCategory" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("AddCategory") }}>Add category</Button></Col>
+      {/* <Col style={{ textAlign: 'initial' }} md={3}><Button variant={buttonState == "AddUnit" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("AddUnit") }}>Add unit of measure</Button></Col> */}
+      <Col style={{ textAlign: 'left' }} md={3}><Button variant={buttonState == "deleteCategory" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("deleteCategory") }}>Delete category</Button></Col>
+      {/* <Col style={{ textAlign: 'initial' }} md={2}><Button variant={buttonState == "deleteUnit" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("deleteUnit") }}>Delete unit of measure</Button></Col> */}
     </Row>
     {buttonState == "AddCategory" && <Row>
       <Col>
@@ -215,7 +215,7 @@ console.log("data",data)
 
     }
 
-    {buttonState == "AddUnit" && <Row>
+    {/* {buttonState == "AddUnit" && <Row>
       <Col>
         <Row style={{ padding: '2% 1%' }}>
           <Col md={2}> <Form.Label style={{ paddingTop: '3%' }} htmlFor="newunit">Write new unit:</Form.Label></Col>
@@ -237,7 +237,7 @@ console.log("data",data)
         </Form.Text>
       </Col>
     </Row>
-    }
+    } */}
     {buttonState == "deleteCategory" && <Row style={{ padding: '2% 1%' }}>
       {categoryList && <><Col md={10}><Form.Select
         onChange={(e) => { setCategory(e.target.value) }}
@@ -245,11 +245,11 @@ console.log("data",data)
         <Col md={2}><Button variant='danger' onClick={() => { delete_category() }}>delete</Button></Col></>}
     </Row>
     }
-    {buttonState == "deleteUnit" && <Row style={{ padding: '2% 1%' }}>
+    {/* {buttonState == "deleteUnit" && <Row style={{ padding: '2% 1%' }}>
       {categoryList && <><Col md={10}><Form.Select>{unitList.map((x, i) => <option value={x.id} key={i}>{x.name}</option>)}</Form.Select></Col>
         <Col md={2}><Button variant='danger'>delete</Button></Col></>}
     </Row>
-    }
+    } */}
     <div style={{ marginTop: '3%' }}>
       {loading && <Loading />}
       {data && <FoodTable
