@@ -6,13 +6,13 @@ import { ImageUri } from '../../Functions/Axios'
 import { BsFillPencilFill, BsTrash } from "react-icons/bs";
 
 export default function FoodTable(props) {
-  const { data, isRecipe } = props
-  const [rows,setRows]=useState()
+  const { data, isRecipe,getCellEvent,getRows } = props
+
 
   const columns = isRecipe ? [
     {
       name: 'id',
-      label: 'Id',
+      label: 'id',
       sortable: true,
       filter: true,
       hide: true
@@ -128,7 +128,7 @@ export default function FoodTable(props) {
     [
       {
         name: 'id',
-        label: 'Id',
+        label: 'id',
         sortable: true,
         filter: true,
         hide: true
@@ -214,7 +214,8 @@ export default function FoodTable(props) {
       data={data}
       isSelectedRows={true}
       language='English'
-      // getTablerows={(values)=>{setRows(values)}}
+      getRows={(rows) => { getRows(rows) }}
+      getCellEvent={(data) => { getCellEvent&&getCellEvent(data) }}
     />
   )
 }

@@ -22,7 +22,7 @@ export const Axios = (url, method, body) =>
       })
       .catch((error) => {
         console.log("body=>",body);
-        console.log("url=>",  url)
+        console.log("url=>",  upiUrl+url)
         console.log("method=>", method)
         reject(error.response.status);
       });

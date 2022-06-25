@@ -16,3 +16,15 @@ export const  Get_all_comments=()=>{
 export const  Get_admin_details=()=>{
   return Axios(`User/admin_details`,'Get');
 }
+export const  Delete_Comment=(comment_id)=>{
+  return Axios(`forum/Delete/${comment_id}`,'Delete');
+}
+export const  Delete_food=(name,id)=>{
+  return Axios(`Food/delete${name}/${id}`,'Delete');
+}
+export const  addCategory=(categoryName,categoryId,body)=>{
+  return Axios(`Food/addCategory/${categoryName}/${categoryId}`,'Put',body);
+}
+export const  deleteCategory=(categoryId,body)=>{
+  return Axios(`Food/deleteCategory/${categoryId}`,'Delete',body);
+}

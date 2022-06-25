@@ -4,8 +4,7 @@ import Tables from '../../Tools/Tables/Tables'
 import { ImageUri } from '../../Functions/Axios';
 
 export default function ForumTable(props) {
-  const { data, isRecipe } = props
-  // const [rows,setRows]=useState()
+  const { data,getRows } = props
 
   const columns = [
     {
@@ -75,7 +74,7 @@ export default function ForumTable(props) {
       data={data}
       isSelectedRows={true}
       language='English'
-    // getTablerows={(values)=>{setRows(values)}}
+      getRows={(rows)=>{getRows&&getRows(rows)}}
     />
   )
 }

@@ -98,7 +98,6 @@ useLayoutEffect(()=>{
         <Col>
           {alert &&
             <Alert className='alert' variant={alert && alert.variant ? alert.variant : 'primary'}>
-              {/* {alert && alert.head && <Alert.Heading>{alert.head}</Alert.Heading>} */}
               {alert && alert.body &&
                 <p className='alertBody'>
                   {alert.body}

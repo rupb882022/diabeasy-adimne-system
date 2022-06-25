@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { DataGrid, GridToolbar, heIL, enUS, plPL, gridRowsIdToIdLookupSelector } from '@mui/x-data-grid';
 import '../Tables/Tables.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -15,7 +15,9 @@ export default function MaterialUiTable(props) {
     columns,
     isSelectedRows,
     stickCol,//{left: ['ColName']}
-    language
+    language,
+    getRows,
+    getCellEvent
   } = props
   const [selectedRows, setSelectedRows] = useState();
 
@@ -57,12 +59,13 @@ export default function MaterialUiTable(props) {
         }
       ];
       columns.forEach((x, i) => {
+
         let datacol =
         {
           key: i,
-          field: x.name=="id"?'item-'+x.name:x.name,
-          headerName: x.label,
-          width: x.width?x.width:width,
+          field: x.name == "id" ? 'item-' + x.name : x.name,
+          headerName: x.label == "id" ? 'item-' + x.label : x.label,
+          width: x.width ? x.width : width,
           headerAlign: 'center',
           editable: x.editable ? x.editable : false,
           sortable: x.sortable ? x.sortable : false,
@@ -86,10 +89,10 @@ export default function MaterialUiTable(props) {
   const createRows = () => {
     if (data) {
       return data.map((x, i) => {
-     if(x.id){
-      x['item-id']=x['id']
-      x['id']=i;
-     }
+        if (x.id) {
+          x['item-id'] = x['id']
+          x['id'] = i;
+        }
         return { id: i, ...x }
       })
     }
@@ -102,15 +105,24 @@ export default function MaterialUiTable(props) {
     let temp = rows.map(x => TableRows[x])
     setSelectedRows(temp)
   }
-   console.log(TableRows)
+
+
+
+  //The function getRows should be aged outside the component 
+  useEffect(() => {
+    if (getRows&&selectedRows) {
+      getRows(selectedRows)
+    }
+  }, [selectedRows])
+
   return (
     <div style={{ height: 400, width: '100%', direction: language === 'Hebrew' ? 'rtl' : 'ltr' }}>
 
       {data && Tablecolumns &&
         <ThemeProvider theme={theme}>
           <DataGrid
-          getRowHeight={() => 'auto'}
-          disableSelectionOnClick 
+            getRowHeight={() => 'auto'}
+            disableSelectionOnClick
             rows={TableRows}
             columns={Tablecolumns}
             loading={!TableRows || TableRows.length === 0}
@@ -125,6 +137,7 @@ export default function MaterialUiTable(props) {
             onSelectionModelChange={(selectdRows) => {
               handelSelectedRows(selectdRows)
             }}
+           onCellClick={(data) => { getCellEvent&&getCellEvent(data) }}
             components={{
               Toolbar: GridToolbar,
             }}
@@ -132,7 +145,7 @@ export default function MaterialUiTable(props) {
               boxShadow: 2,
               border: 2,
               borderColor: 'primary.light',
-              backgroundColor:'white',
+              backgroundColor: 'white',
               '& .MuiDataGrid-cell:hover': {
                 color: 'primary.main',
               },

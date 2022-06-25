@@ -8,6 +8,8 @@ export default function Tables(props) {
    ,columns //json with columns configuration            *Required*
    ,isSelectedRows=false //for checkbox select rows
    ,language='Hebrew'
+   ,getRows
+   ,getCellEvent
   }=props
 
 
@@ -26,6 +28,8 @@ export default function Tables(props) {
         columns={columns}
         isSelectedRows={isSelectedRows}
         language={language}
+        getRows={(rows)=>{getRows&&getRows(rows)}}
+        getCellEvent={(data) => { getCellEvent&&getCellEvent(data) }}
         />;
       default:
         break;
