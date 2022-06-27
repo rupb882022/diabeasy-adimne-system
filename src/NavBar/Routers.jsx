@@ -1,10 +1,11 @@
 import React, { useLayoutEffect, useState } from "react";
 import * as AiIcons from 'react-icons/ai'
-import { MdForum, MdFastfood } from 'react-icons/md'
+import { MdForum, MdFastfood,MdBugReport } from 'react-icons/md'
 import { Route, Routes } from 'react-router-dom';
 import Home from '../Pages/Home.jsx';
 import Food from '../Pages/Food/Food.jsx';
 import Forum from '../Pages/Forum/Forum.jsx';
+import Reports from '../Pages/Reports/Reports.jsx';
 import logo from '../../src/logo.png'
 export const SidebarLayout = [
   {
@@ -25,6 +26,12 @@ export const SidebarLayout = [
     icon: <MdForum />,
     ClassName: 'nav-text'
   },
+  {
+    title: 'Reports',
+    path: '/Reports',
+    icon: <MdBugReport />,
+    ClassName: 'nav-text'
+  },
 ]
 
 export default function Page(props) {
@@ -33,7 +40,7 @@ export default function Page(props) {
   const { navMenuExpended, direction } = props
   const windowWidth = screenSize;
   let pageWidth = parseFloat(windowWidth) - (navMenuExpended ? 50 : 200);
-
+console.log("screenSize",screenSize)
 
   // Responsible on responsiveness when screen size changes
   useLayoutEffect(() => {
@@ -70,8 +77,8 @@ export default function Page(props) {
 
     },
     content: {
-      height: '100%',
-      width: '100%',
+      height: window.innerHeight,
+      width: pageWidth,
       backgroundColor:'rgb(255 255 255 / 78%)'
     }
   }
@@ -84,6 +91,7 @@ export default function Page(props) {
         <Route path="/" element={<Home />} />
         <Route path="/Food" element={<Food />} />
         <Route path="/Forum" element={<Forum />} />
+        <Route path="/Reports" element={<Reports />} />
       </Routes>
     </div>
   </div>)

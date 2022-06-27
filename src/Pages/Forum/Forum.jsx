@@ -9,7 +9,7 @@ export default function Forum() {
   const [selectedRows, setSelectedRows] = useState();
   const [alert, setAlert] = useState();
   const [loading, setLoading] = useState(false);
-  console.log("selectedRows", selectedRows)
+ 
 
   useEffect(() => {
     Get_all_comments().then((respone) => {

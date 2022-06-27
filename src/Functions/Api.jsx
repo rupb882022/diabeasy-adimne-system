@@ -31,3 +31,6 @@ export const  deleteCategory=(categoryId,body)=>{
 export const  checkAdmin=(userName,password)=>{
   return Axios(`User/checkAdmin/${userName}/${password}`,'Get');
 }
+export const  getReports=()=>{
+  return Axios(`User/alert/-1`,'Get');
+}

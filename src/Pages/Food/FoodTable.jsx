@@ -41,7 +41,7 @@ export default function FoodTable(props) {
       filter: false,
       width:150,
       renderCell: (params) => {
-        return <ul> {params && params.value ? params.value.map(x => <li style={{textAlign:'left'}} key={x.id} value={x.id}>{x.name}</li>) : <></>} </ul>
+        return <ul> {params && params.value ? params.value.map((x,i) => <li style={{textAlign:'left'}} key={i+"p2"} value={x.id}>{x.name}</li>) : <></>} </ul>
       }
     },
     {
@@ -51,7 +51,7 @@ export default function FoodTable(props) {
       filter: false,
       width:150,
       renderCell: (params) => {
-        return <ul> {params && params.value ? params.value.map(x => <li style={{textAlign:'left'}} key={x.id} value={x.id}>{x.name}</li>) : <></>} </ul>
+        return <ul> {params && params.value ? params.value.map((x,i) => <li style={{textAlign:'left'}} key={i+"p"} value={x.id}>{x.name}</li>) : <></>} </ul>
       }
     },
     {
@@ -60,7 +60,7 @@ export default function FoodTable(props) {
       sortable: false,
       filter: false,
       renderCell: (params) => {
-        return <ul> {params && params.value ? params.value.map(x => <li style={{textAlign:'left'}} key={x.id} value={x.id}>{x.name}</li>) : <></>} </ul>
+        return <ul> {params && params.value ? params.value.map((x,i) => <li style={{textAlign:'left'}} key={i+"p3"} value={x.id}>{x.name}</li>) : <></>} </ul>
       }
     },
     {
@@ -158,7 +158,7 @@ export default function FoodTable(props) {
         filter: false,
         width:150,
         renderCell: (params) => {
-          return <ul> {params && params.value ? params.value.map(x => <li style={{textAlign:'left'}} key={x.id} value={x.id}>{x.name}</li>) : <></>} </ul>
+          return <ul> {params && params.value ? params.value.map((x,i) => <li style={{textAlign:'left'}} key={i+"p4"} value={x.id}>{x.name}</li>) : <></>} </ul>
         }
       },
       {
@@ -168,7 +168,7 @@ export default function FoodTable(props) {
         filter: false,
         width:150,
         renderCell: (params) => {
-          return <ul > {params && params.value ? params.value.map(x => <li style={{textAlign:'left'}} key={x.id} value={x.id}>{x.name}</li>) : <></>} </ul>
+          return <ul > {params && params.value ? params.value.map((x,i) => <li style={{textAlign:'left'}} key={i+"p5"} value={x.id}>{x.name}</li>) : <></>} </ul>
         }
       },
       {

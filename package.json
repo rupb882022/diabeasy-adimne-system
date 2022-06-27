@@ -1,6 +1,7 @@
 {
-  "name": "side-bar",
+  "name": "diabeasy",
   "version": "0.1.0",
+  "homepage": "ftp://bgroup88@194.90.158.74/bgroup88/prod/build",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",

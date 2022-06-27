@@ -55,8 +55,14 @@ export default function Home() {
         >
           <Card.Header style={{fontSize:40,fontWeight:'bold'}}>Reports</Card.Header>
           <Card.Body>
-            <Card.Text style={{fontSize:80,fontWeight:600}}>
-            {kpi.report}
+            <Card.Text style={{fontSize:30,fontWeight:600}}>
+            Total:{kpi.report}
+            </Card.Text>
+            <Card.Text style={{fontSize:20,fontWeight:400}}>
+            Open: {kpi.openReport}
+            </Card.Text>
+            <Card.Text style={{fontSize:20,fontWeight:400}}>
+            Close: {kpi.report-kpi.openReport}
             </Card.Text>
           </Card.Body>
         </Card>
@@ -72,10 +78,10 @@ export default function Home() {
             Total: {kpi.goodReco+kpi.bedReco}
             </Card.Text>
             <Card.Text style={{fontSize:20,fontWeight:400}}>
-            good: {kpi.goodReco}
+            Good: {kpi.goodReco}
             </Card.Text>
             <Card.Text style={{fontSize:20,fontWeight:400}}>
-            bad: {kpi.bedReco}
+            Bad: {kpi.bedReco}
             </Card.Text>
           </Card.Body>
         </Card>

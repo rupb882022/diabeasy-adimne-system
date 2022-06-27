@@ -171,9 +171,9 @@ console.log("data",data)
   return (<Container>
     <h1>food system</h1>
     <Row>
-      <Col style={{ textAlign: 'left' }} md={1}><Button variant={isRecipe ? "secondary" : "primary"} onClick={() => { setIsRecipe(false) }}>Ingredients</Button></Col>
-      <Col style={{ textAlign: 'left' }} md={2}><Button variant={isRecipe ? "primary" : "secondary"} onClick={() => { setIsRecipe(true) }}>Recipes</Button></Col>
-      <Col style={{ textAlign: 'left' }} md={5}><Button variant={buttonState == "AddCategory" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("AddCategory") }}>Add category</Button></Col>
+      <Col style={{ textAlign: 'end' }}md={3} ><Button variant={isRecipe ? "secondary" : "primary"} onClick={() => { setIsRecipe(false) }}>Ingredients</Button></Col>
+      <Col style={{ textAlign: 'left' }}md={3} ><Button variant={isRecipe ? "primary" : "secondary"} onClick={() => { setIsRecipe(true) }}>Recipes</Button></Col>
+      <Col style={{ textAlign: 'end' }} md={3} ><Button variant={buttonState == "AddCategory" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("AddCategory") }}>Add category</Button></Col>
       {/* <Col style={{ textAlign: 'initial' }} md={3}><Button variant={buttonState == "AddUnit" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("AddUnit") }}>Add unit of measure</Button></Col> */}
       <Col style={{ textAlign: 'left' }} md={3}><Button variant={buttonState == "deleteCategory" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("deleteCategory") }}>Delete category</Button></Col>
       {/* <Col style={{ textAlign: 'initial' }} md={2}><Button variant={buttonState == "deleteUnit" ? "primary" : "secondary"} onClick={() => { handel_header_button_click("deleteUnit") }}>Delete unit of measure</Button></Col> */}
@@ -196,12 +196,12 @@ console.log("data",data)
             <Col md={2}> <Form.Label style={{ paddingTop: '3%' }} htmlFor="newunit">Choose exist category:</Form.Label></Col>
             <Col md={10}><Form.Select
               onChange={(e) => { setCategory(e.target.value) }}
-            >{categoryList.map((x, i) => <option value={x.id} key={i}>{x.name}</option>)}</Form.Select></Col>
+            >{categoryList.map((x, i) => <option value={x.id} key={"C"+x.name+i}>{x.name}</option>)}</Form.Select></Col>
           </>}
         </Row>
         <Form.Text id="listCategory" muted>
           {categoryList && <><p style={{ height: 10 }}>all exist category:</p>
-            <ul style={{ display: 'flex', overflowX: 'auto', padding: '0px 2%' }}>{categoryList.map(x => <ol key={x.id}>{x.name}</ol>)}</ul>
+            <ul style={{ display: 'flex', overflowX: 'auto', padding: '0px 2%' }}>{categoryList.map((x,i) => <ol key={"C2"+x.name+i}>{x.name}</ol>)}</ul>
           </>}
         </Form.Text>
       </Col>
@@ -241,7 +241,7 @@ console.log("data",data)
     {buttonState == "deleteCategory" && <Row style={{ padding: '2% 1%' }}>
       {categoryList && <><Col md={10}><Form.Select
         onChange={(e) => { setCategory(e.target.value) }}
-      >{categoryList.map((x, i) => <option value={x.id} key={i}>{x.name}</option>)}</Form.Select></Col>
+      >{categoryList.map((x, i) => <option value={x.id} key={"C3"+x.name+i}>{x.name}</option>)}</Form.Select></Col>
         <Col md={2}><Button variant='danger' onClick={() => { delete_category() }}>delete</Button></Col></>}
     </Row>
     }

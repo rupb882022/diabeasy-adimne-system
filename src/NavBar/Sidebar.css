@@ -1,10 +1,11 @@
-
+@media screen and (min-width: 750px){
 .menu-bars-active {
   text-align: center;
   margin-left: 0.5rem;
   font-size: 1.5rem;
   background: none;
   z-index: 1;
+}
 }
 .menu-bars {
   display: block;
@@ -25,11 +26,14 @@
   width: 200px;
   z-index: 1;
 }
+
+@media screen and (min-width: 750px){
 .nav-menu.left-side.active {
   left: 0;
 }
 .nav-menu.right-side.active {
   right: 0;
+}
 }
 .nav-menu.active {
   transition: 350ms;
@@ -93,6 +97,7 @@
   color: white;
   width: 110%;
 }
+
 .nav-text a {
   text-decoration: none;
   color: rgb(222, 222, 222);
