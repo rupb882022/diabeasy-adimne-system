@@ -27,7 +27,7 @@ export default function Forum() {
       let tempData=data;
         for (let i = 0; i < selectedRows.length; i++) {
         await Delete_Comment(selectedRows[i]['item-id']).then((respone) => {
-          console.log("respone", respone)
+
           respone&&respone.status==200&&counter++;
           tempData=tempData.filter(x=>x['item-id']!=selectedRows[i]['item-id'])
         }, (erorr) => {

@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import Tables from '../../Tools/Tables/Tables'
 import { ImageUri } from '../../Functions/Axios';
+import { AiFillCheckCircle} from 'react-icons/ai'
+import { MdCancel} from 'react-icons/md'
+import { parseISO ,format } from 'date-fns';
 
 export default function ReportTable(props) {
   const { data,getRows } = props
@@ -16,10 +19,13 @@ export default function ReportTable(props) {
     },
     {
       name: 'date_time',
-      label: 'date_time',
+      label: 'date',
       sortable: true,
       filter: true,
-      width:180
+      width:180,
+      renderCell: (params) => {
+         return <p style={{marginBottom: 0}}>{format(parseISO (params.row.date_time), 'dd-MM-yyyy')}</p>;
+      }
     },
 
     {
@@ -28,7 +34,7 @@ export default function ReportTable(props) {
       sortable: true,
       filter: true,
       renderCell: (params) => {
-        return <p>{params.row.daysLeft || ''} {params.row.daysLeftName|| ''} ago</p>;
+        return <p style={{marginBottom: 0}}>{params.row.daysLeft || ''} {params.row.daysLeftName|| ''} ago</p>;
       }
     }, 
     {
@@ -36,6 +42,7 @@ export default function ReportTable(props) {
       label: 'user id',
       sortable: true,
       filter: true,
+      width:120
     },
 
     {
@@ -58,7 +65,17 @@ export default function ReportTable(props) {
       name: 'content',
       label: 'content',
       sortable: true,
-      filter: true,width:250
+      filter: true,
+      width:250
+    },
+    {
+      name: 'active',
+      label: 'is solved',
+      sortable: true,
+      filter: true,
+      renderCell: (params) => {
+        return params.value?<MdCancel style={{fontSize:25,color:'red',textAlign:'center'}}/>:<AiFillCheckCircle style={{fontSize:25,color:'green',textAlign:'center'}}/>;
+      }
     },
   ]
 

@@ -6,8 +6,6 @@ export default function Home() {
   useEffect(() => {
     Get_admin_details().then((respone) => {
       if (respone.status == 200) {
-        console.log("respone", respone)
-
 
 
         let data = []

@@ -144,6 +144,7 @@ export default function MaterialUiTable(props) {
             sx={{
               boxShadow: 2,
               border: 2,
+              textAlign:'center',
               borderColor: 'primary.light',
               backgroundColor: 'white',
               '& .MuiDataGrid-cell:hover': {

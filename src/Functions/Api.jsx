@@ -34,3 +34,6 @@ export const  checkAdmin=(userName,password)=>{
 export const  getReports=()=>{
   return Axios(`User/alert/-1`,'Get');
 }
+export const  problemSolved=(body)=>{
+  return Axios(`User/problemSolved`,'PUT',body);
+}
