@@ -16,7 +16,6 @@ export default function Food() {
   const [loading, setLoading] = useState(false);
 
   const [category, setCategory] = useState();
-console.log("data",data)
   const setTable = async () => {
     await Get_all_food(isRecipe ? 'getRecipes' : 'getIngredients').then((respone) => {
       if (respone.status == 200) {
@@ -65,7 +64,6 @@ console.log("data",data)
     setAlert('')
   }
   const handel_cell_click = async (data) => {
-    console.log("data", data)
 
     switch (data.field) {
       case "delete":

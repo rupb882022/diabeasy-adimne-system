@@ -76,10 +76,10 @@ export default function Home() {
             Total: {kpi.goodReco+kpi.bedReco}
             </Card.Text>
             <Card.Text style={{fontSize:20,fontWeight:400}}>
-            Good: {kpi.goodReco}
+            Use: {kpi.goodReco}
             </Card.Text>
             <Card.Text style={{fontSize:20,fontWeight:400}}>
-            Bad: {kpi.bedReco}
+            Ratio: {(kpi.goodReco/(kpi.goodReco+kpi.bedReco)*100).toFixed(1)}%
             </Card.Text>
           </Card.Body>
         </Card>

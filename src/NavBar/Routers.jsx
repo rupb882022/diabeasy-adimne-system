@@ -40,7 +40,6 @@ export default function Page(props) {
   const { navMenuExpended, direction } = props
   const windowWidth = screenSize;
   let pageWidth = parseFloat(windowWidth) - (navMenuExpended ? 50 : 200);
-console.log("screenSize",screenSize)
 
   // Responsible on responsiveness when screen size changes
   useLayoutEffect(() => {
